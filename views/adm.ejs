@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="public/font_awesome/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="/public/css/estilo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="public/js/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:600&display=swap" rel="stylesheet">
+</head>
+
+
+<body style="margin:0px;padding:0px;">
+    <div class="text-center ongs" style="margin-bottom:0px; border-radius:0px;">
+        <img src="public/img/loho.png">
+    </div>
+    <nav class="navbar navbar-expand-lg sticky-top" id="aa" style="margin:0px;">
+        <button class="navbar-toggler navbar-toggler-right btn-primary" style="background:unset" type="button"
+            data-toggle="collapse" data-target="#navb" id="menucell">
+            <span><i class="fas fa-list-ul"></i></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse ffr" id="navb">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm"  href="/"><i class="fas fa-home"></i> REFUGE HELP</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm"  href="/noticias"> <i class="far fa-newspaper"></i>
+                        NOTÍCIAS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm"  href="/refugiados"> <i class="fas fa-user-injured"></i>
+                        REFUGIADOS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm"  href="/ongs"> <i class="fas fa-globe"></i>
+                        ONGS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm"  href="/sobre"><i class="fas fa-info-circle"></i> SOBRE
+                        NÓS</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="container mt-5 pl-5 pr-5">
+        <div class="row pl-5 pr-5">
+            <div class="col-sm-12">
+                <form action="/admpage" method="POST">
+                    <div class="form-group">
+                        <label>Nome</label>
+                        <input type="text" class="form-control" placeholder="Nome" name="nome">
+                    </div>
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input type="password" class="form-control" placeholder="Senha" name="senha">
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary mb-2">Enviar</button>
+                    <% if (typeof log === 'undefined'){ } else{%>
+                    <div class="container w-50 ">
+                    <div class="ffr text-center bg-danger border rounded pt-2 text-white">
+                            <% if(log==0){%>
+                                <p>Digite seu email e senha!</p>
+                            <% } else if(log==1){ %>
+                                <p>Usuário e senha incorretos ou não cadastrados</p>
+                            <% } else if(log==2){ %>
+                                <p>Erro no MySQL, contate o ADM</p>
+                            <% } %>
+                        <% } %>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

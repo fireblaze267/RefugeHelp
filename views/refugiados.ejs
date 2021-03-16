@@ -1,0 +1,243 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="public/font_awesome/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="/public/css/estilo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="public/js/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
+</head>
+
+
+<body style="margin:0px;padding:0px;">
+    <div class="text-center ongs" style="margin-bottom:0px; border-radius:0px;" class="jumbotron">
+        <img src="public/img/loho.png">
+    </div>
+    <nav class="navbar navbar-expand-lg sticky-top" id="aa" style="margin:0px;">
+        <button class="navbar-toggler navbar-toggler-right btn-primary" style="background:unset" type="button"
+            data-toggle="collapse" data-target="#navb" id="menucell">
+            <span><i class="fas fa-list-ul"></i></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse ffr" id="navb">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm " href="/"><i class="fas fa-home"></i>
+                        REFUGE HELP</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/noticias"> <i class="far fa-newspaper"></i>
+                        NOTÍCIAS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm border-bottom" style="border-bottom: solid 3px !important"
+                        href="/refugiados"> <i class="fas fa-user-injured"></i>
+                        REFUGIADOS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/ongs"> <i class="fas fa-globe"></i>
+                        ONGS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/sobre"><i class="fas fa-info-circle"></i> SOBRE
+                        NÓS</a>
+                </li>
+            </ul>
+            <%if(typeof sess === 'undefined'){ %>
+            <button class="btn btn-primary mr-3" style="color:text-primary;" type="button" data-toggle="modal"
+                data-target="#myModalLogin">Login</button>
+            <button class="btn btn-primary" style="color:text-primary" type="button" data-toggle="modal"
+                data-target="#myModal">Cadastro</button>
+            <%}else{%>
+
+            <i class="far fa-user-circle fa-2x tm" type="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"></i>
+            <div class="dropdown-menu dropdown-menu-right">
+                <%if(sess.logado == 1){ %>
+                <a class="dropdown-item" href="/perfil">Perfil</a>
+                <a class="dropdown-item" href="/close">encerrar sessão</a>
+                <%}else{%>
+                <a class="dropdown-item" href="/adm">Perfil</a>
+                <a class="dropdown-item" href="/close">encerrar sessão</a>
+                <%}%>
+                </div>
+
+
+            <% }%>
+
+            </div>
+
+    </nav>
+    <div class="container-fluid p-3">
+    <div class="row m-0 p-5">
+        <div class="col-12">
+            <p class="text-dark text-center ffr" style="font-size:50px">O QUE SÃO REFUGIADOS</p>
+        </div>
+        <div class="text-justify">
+            <p class="refugiado">Refugiados são todos aqueles que se encontram fora de seu país de origem por variados
+                motivos como guerras, regimes militares, desastres naturais, entre outros. Por esses e outros motivos,
+                os povos que moram nesses países, são forçados a deixarem sua região natal e se deslocarem para outra
+                região ou país que fornece condições para se viver. Muitas das vezes essas condições são minimas, um bom
+                exemplo disso são os campos de refugiados.</p><br>
+
+            <div class="text-center p-5"><iframe width="100%" height="600" src="https://www.youtube.com/embed/mCPSGPiqfFk"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div><br>
+
+            <div class="row mb-5 p-5">
+                <div class="col-6 text-justify ">
+                    <p class="text-dark text-center ffr" style="font-size:30px">Locais de Origem</p>
+                    <p>
+                        Os principais locais de origem são a Síria, Afeganistão, Sudão do Sul, Mianmar, Somália,
+                        República Dominicana do Congo, Sudão e Iraque, e 57% desses refugiados vem do Sudão do Sul,
+                        Afeganistão e Síria. O gráfico abaixo demonstra os principais países de origem de refugiados que
+                        solicitam refugio na União Europeia.</p>
+
+                    <img src="../public/img/origem_refugiados.png" width=450px>
+
+                </div>
+                <div class="col-6 text-justify ">
+                    <p class="text-dark text-center ffr" style="font-size:30px">Campos de Refugiados</p>
+                    <p class="refugiado">Um campo de refugiados é um local onde provisoriamente é construído por ONGs ou
+                        organizações governamentais para abrigar pessoas que são refugiadas,tendo somente o básico para
+                        sobrevivência. Mantida com recursos enviados do governo ou por doações de ONG´s. Costuma durar
+                        alguns anos, porém algumas duram por muito tempo e param de receber recursos, mas continuam
+                        ativas, mantidas apenas dos recursos gerados pelas pessoas que moram nesses lugares. Um dos
+                        maiores e mais conhecidos campos de refugiados é o de <strong>Zaatari, localizado na
+                            Jordânia</strong>, existente desde o ano de 2012, após a primavera arábe que eclodiu em 2011
+                        e gerou muitos conflitos na região do Oriente Médio, tendo uma população de aproximadamente 80
+                        mil pessoas. Ele possui mercados, ruas principais e centros médicos.</p>
+                </div>
+            </div>
+            <br>
+            <p class="ffr" style="font-size:30px">Localização do Campo de Refugiados de Zaatari</p>
+            <div class="text-center"><iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27766.070825092487!2d36.322311096719304!3d32.296522519378925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151ba30d2922b547%3A0x7c98c2e93029f754!2sZaatari!5e1!3m2!1spt-BR!2sbr!4v1570624235684!5m2!1spt-BR!2sbr"
+                    width="1000" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
+
+        </div>
+        <div class="col-12 mt-4 text-center mt-5 mb-3">
+            <p class="display-4 text-dark ffr" style="font-size:50px">O QUE SÃO MIGRANTES FORÇADOS</p>
+        </div>
+    <div class="row p-5">
+        <p class="refugiado text-justify">Os migrantes forçados podem ser definidos como todos aqueles que saem de sua
+            localidade de origem e vão para outro local de forma condicionada, ou seja, forçados a deixar seu país,
+            cidade ou estado de origem para fugir de conflitos, desastres ou outros fatores que possam ameaçar sua
+            existência, porém os migrantes forçados não possuem direitos garantidos por nenhuma Lei. Deslocados
+            internos, refugiados e asilados podem ser considerados migrantes forçados, mas perante a lei apenas os
+            refugiados têm seus direitos garantidos por leis internacionais de acordo com a Convenção das Nações Unidas
+            sobre o Estatuto de Refugiados, do ano de 1951. Você pode acessá-lo <a target="_blank"
+                href="https://www.acnur.org/fileadmin/Documentos/portugues/BDL/Convencao_relativa_ao_Estatuto_dos_Refugiados.pdf">clicando
+                aqui!</a></p>
+                </div>
+    </div>
+    </div>
+
+
+    <!--FOOTER -->
+    <div class="text-center text-light aa">
+        <p>Refuge Help © 2019</p>
+    </div>
+    <!--FOOTER -->
+
+    <!-- MODAL DE CADASTRO -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Cadastro</h4>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                            class="fas fa-times"></i></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="/cadastrar" method="post">
+                        <div class="form-group">
+                            <label for="nome">Nome de Usuario:</label>
+                            <input type="text" class="form-control" name="nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha:</label>
+                            <input type="password" class="form-control" name="senha">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Cadastar</button>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL DE CADASTRO -->
+
+
+    <!-- MODAL DE LOGIN -->
+    <div class="modal fade" id="myModalLogin">
+        <div class="modal-dialog-centered modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Logar</h4>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                            class="fas fa-times"></i></button>
+                </div>
+                <br>
+                <div class="modal-body">
+                    <form action="/logar" method="post">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha:</label>
+                            <input type="password" class="form-control" name="senha">
+                        </div>
+                        <p>Não tem conta?, Cadastre-se <a data-toggle="modal" href="#myModal"
+                                data-dismiss="modal">aqui!</a> </p>
+                        <button type="submit" class="btn btn-primary btn-block">Logar</button>
+
+                        <!--erro login-->
+
+                        <% if (typeof log === 'undefined'){ } else{%>
+                        <div class="text-center bg-danger mt-2 rounded text-white ffr">
+                            <% if(log==0){ %>
+                            <script>
+                                $('#myModalLogin').modal('show');
+                            </script>
+                            <p>Digite seu email e senha!</p>
+                            <% } else if(log==1){ %>
+                            <script>
+                                $('#myModalLogin').modal('show');
+                            </script>
+                            <p>Usuário e senha incorretos ou não cadastrados</p>
+                            <% } else if(log==2){ %>
+                            <script>
+                                $('#myModalLogin').modal('show');
+                            </script>
+                            <p>Erro no MySQL, contate o ADM</p>
+                            <% } %>
+                            <% } %>
+                        </div>
+
+                        <!--erro login-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL DE LOGIN -->
+
+</body>
+
+</html>

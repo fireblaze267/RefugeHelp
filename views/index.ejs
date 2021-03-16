@@ -1,0 +1,269 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="public/font_awesome/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="/public/css/estilo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="public/js/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:600&display=swap" rel="stylesheet">
+</head>
+
+
+<body class="ongs" style="margin:0px;padding:0px;">
+    <div class="text-center bg-primary ongs" style="margin-bottom:0px; border-radius:0px;" class="jumbotron">
+        <a href="/"><img src="public/img/loho.png"></a>
+    </div>
+    <nav class="navbar navbar-expand-lg sticky-top" id="aa" style="margin:0px;">
+        <button class="navbar-toggler navbar-toggler-right btn-primary" style="background:unset" type="button"
+            data-toggle="collapse" data-target="#navb" id="menucell">
+            <span><i class="fas fa-list-ul"></i></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse ffr" id="navb">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm border-bottom" style="border-bottom: solid 3px !important" href="/"><i
+                            class="fas fa-home"></i>
+                        REFUGE HELP</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/noticias"> <i class="far fa-newspaper"></i>
+                        NOTÍCIAS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/refugiados"> <i class="fas fa-user-injured"></i>
+                        REFUGIADOS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/ongs"> <i class="fas fa-globe"></i>
+                        ONGS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/sobre"><i class="fas fa-info-circle"></i> SOBRE
+                        NÓS</a>
+                </li>
+            </ul>
+            <%if(typeof sess === 'undefined'){ %>
+            <button class="btn btn-primary mr-3" style="color:text-primary;" type="button" data-toggle="modal"
+                data-target="#myModalLogin">Login</button>
+            <button class="btn btn-primary" style="color:text-primary" type="button" data-toggle="modal"
+                data-target="#myModal">Cadastro</button>
+            <%}else{%>
+
+            <i class="far fa-user-circle fa-2x tm" type="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"></i>
+            <div class="dropdown-menu dropdown-menu-right">
+                <%if(sess.logado == 1){ %>
+                <a class="dropdown-item" href="/perfil">Perfil</a>
+                <a class="dropdown-item" href="/close">encerrar sessão</a>
+                <%}else{%>
+                <a class="dropdown-item" href="/adm">Perfil</a>
+                <a class="dropdown-item" href="/close">encerrar sessão</a>
+                <%}%>
+            </div>
+
+
+
+            <% }%>
+
+            </div>
+
+    </nav>
+
+    <div class="contianer-fluid bg-dark p-2 mb-4">
+        <p class="display-4 text-white text-center">Notícias Recentes</p>
+        <div class="row m-0">
+            <% if(not = "undefined"){ %>
+                <div class="col-sm-12 p-4 text-center text-secondary">
+                    <h4 class="display-4 mt-5 mb-4">Não há notícias </h4>
+                </div>
+                <%}else{for(i=0;i<not.length;i++){%>
+                    <%if(i>=3){}else{%>  
+            <div class="col-sm-4 mb-2">
+                <a href="/noticia_modelo/<%=not[i].id_noticia%>">
+                    <div class="card bg-dark text-white zoom-home ">
+                        <img class="card-img" src="<%= not[i].img %>" alt="Card image">
+                        <div class="card-img-overlay text-white d-flex flex-column justify-content-center">
+                            <h5 class="card-title"><%=not[i].not_tl%></h5>
+                            <p class="card-text"><%=not[i].card_body%></p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+<%}}}%>
+            <div class="col-sm-12 text-center mt-5">
+            <h2><a href="/noticias" class="badge badge-primary ffr w-50 zoom-home p-3">Ver mais noticias</a></h2>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid p-5 ffr text-center">
+        <div class="row bg-white">
+            <div class="col-sm-12 shadow-lg p-5 border">
+                <P class="text-c text-primary">Refugehelp?</P>
+                <p class="text-c">Refugehelp é um site de notícias redirecionado para refugiados no brasil aqui você vai encontrar diversas notícias
+                 sobre as situações dos refugiados no brasil e maneiras de ajudar as ONGs que os acolhem...
+                </p><br>
+                <h4 class="text-c"><a href="/sobre" class="badge badge-primary">Quer saber mais</a></h4>
+            </div>
+        </div>
+    </div>
+
+<div class="container-fluid p-5 ffr text-center">
+        <div class="row bg-white">
+            <div class="col-sm-12 shadow-lg p-5 border">
+                <P class="text-c text-primary">Refugiados</P>
+                <p class="text-c">
+                        Refugiados são todos aqueles que se encontram fora de seu país de origem por variados motivos como guerras, regimes militares,
+                         desastres naturais, entre outros. Por esses e outros motivos, os povos que moram nesses países,
+                         são forçados a deixarem sua região natal e se deslocarem para outra região ou país que fornece condições para se viver...
+                </p><br>
+                <h4 class="text-c"><a href="/refugiados" class="badge badge-primary">saiba mais</a></h4>
+            </div>
+        </div>
+        </div>
+    </div>
+
+           
+
+
+    <div class="container-fluid p-5 ffr">
+        <div class="row bg-white">
+            <div class="col-sm-12 shadow-lg p-5 border text-center">
+                <P class="text-c text-primary">ONGS</P>
+                <p class="text-c">
+                        Ongs são organizações não governamentais sem fins lucrativos que fazem diversas ações de solidariedade,
+                         existem diversas Ongs que ajudam refugiados...
+                </p>
+                <br>
+                <h4 class="text-c"><a href="/ongs " class="badge badge-primary">Veja todas as ONGs</a></h4>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!--FOOTER -->
+    <div class="text-center text-light aa bg-dark">
+        <p>Refuge Help © 2019</p>
+    </div>
+    <!--FOOTER -->
+
+    <!-- MODAL DE CADASTRO -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Cadastro</h4>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                            class="fas fa-times"></i></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="/cadastrar" method="post">
+                        <div class="form-group">
+                            <label for="nome">Nome de Usuario:</label>
+                            <input type="text" class="form-control" name="nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha:</label>
+                            <input type="password" class="form-control" name="senha">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Cadastar</button>
+                        <!--erro cadastro-->
+                        <% if (typeof cas === 'undefined'){ } else{%>
+                        <div class="text-center bg-danger mt-2 rounded text-white ffr">
+                            <% if(cas==1){ %>
+                            <script>
+                                $('#myModal').modal('show');
+                            </script>
+                            <p>Email já cadastrado</p>
+                            <% } else if(cas==2){ %>
+                            <script>
+                                $('#myModal').modal('show');
+                            </script>
+                            <p>Erro no MySQL, contate o ADM</p>
+                            <% } %>
+                            <% } %>
+                        </div>
+                        <!--erro cadastro-->
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL DE CADASTRO -->
+
+
+    <!-- MODAL DE LOGIN -->
+    <div class="modal fade" id="myModalLogin">
+        <div class="modal-dialog-centered modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Logar</h4>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                            class="fas fa-times"></i></button>
+                </div>
+                <br>
+                <div class="modal-body">
+                    <form action="/logar" method="post">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha:</label>
+                            <input type="password" class="form-control" name="senha">
+                        </div>
+                        <p>Não tem conta?, Cadastre-se <a data-toggle="modal" href="#myModal"
+                                data-dismiss="modal">aqui!</a> </p>
+                        <button type="submit" class="btn btn-primary btn-block">Logar</button>
+
+                        <!--erro login-->
+
+                        <% if (typeof log === 'undefined'){ } else{%>
+                        <div class="text-center bg-danger mt-2 rounded text-white ffr">
+                            <% if(log==0){ %>
+                            <script>
+                                $('#myModalLogin').modal('show');
+                            </script>
+                            <p>Digite seu email e senha!</p>
+                            <% } else if(log==1){ %>
+                            <script>
+                                $('#myModalLogin').modal('show');
+                            </script>
+                            <p>Usuário e senha incorretos ou não cadastrados</p>
+                            <% } else if(log==2){ %>
+                            <script>
+                                $('#myModalLogin').modal('show');
+                            </script>
+                            <p>Erro no MySQL, contate o ADM</p>
+                            <% } %>
+                            <% } %>
+                        </div>
+
+                        <!--erro login-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL DE LOGIN -->
+
+</body>
+
+</html>

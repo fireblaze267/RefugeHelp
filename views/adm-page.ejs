@@ -1,0 +1,233 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="public/font_awesome/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="/public/css/estilo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="public/js/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="public/css/card.css">
+</head>
+
+<body  style="margin:0px;padding:0px;">
+        <div class="text-center bg-dark ongs" style="margin-bottom:0px; border-radius:0px;" class="jumbotron">
+                <img src="public/img/loho.png">
+            </div>
+    <nav class="navbar navbar-expand-lg sticky-top" id="aa" style="margin:0px;">
+        <button class="navbar-toggler navbar-toggler-right btn-primary" style="background:unset" type="button"
+            data-toggle="collapse" data-target="#navb" id="menucell">
+            <span><i class="fas fa-list-ul"></i></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse ffr" id="navb">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/"><i class="fas fa-home"></i> REFUGE HELP</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm"  href="/noticias"> <i class="far fa-newspaper"></i>
+                        NOTÍCIAS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm"  href="/refugiados"> <i class="fas fa-user-injured"></i>
+                        REFUGIADOS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm"  href="/ongs"> <i class="fas fa-globe"></i>
+                        ONGS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm"  href="/sobre"><i class="fas fa-info-circle"></i> SOBRE
+                        NÓS</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+<p class="display-4 text-center mt-3">FERRAMENTAS ADM</p>
+    <div class="container mt-4">
+        <div class="containercard">
+            <a href="/form"><div class="items zoom">
+                <div class="icon-wrapper">
+                    <i class="far fa-newspaper fa-2x"></i>
+                </div>
+                <div class="project-name">
+                    <p>CRIAR NOTICIA</p>
+                </div>
+            </div></a>
+            
+            <a href="/buscar"><div class="items zoom">
+                <div class="icon-wrapper">
+                        <i class="fas fa-th-list fa-2x"></i>
+                </div>
+                <div class="project-name">
+                    <p>GERENCIAR USUARIOS</p>
+                </div>
+            </div></a>
+
+            <a href="/listanot"><div class="items zoom">
+                <div class="icon-wrapper">
+                        <i class="far fa-edit"></i>
+                </div>
+                <div class="project-name">
+                    <p>GERENCIAR NOTICIAS</p>
+                </div>
+            </div></a>
+        </div>
+        <div class="containercard mt-2 mb-3">
+            <div class="items zoom" data-toggle="modal" data-target="#myModal">
+                        <div class="icon-wrapper">
+                                <i class="fas fa-user-cog fa-2x"></i>
+                        </div>
+                        <div class="project-name">
+                            <p>CADASTRAR ADM</p>
+                        </div>
+                    </div>
+
+                    <div class="items zoom" data-toggle="modal" data-target="#myModal2">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-user-times"></i>
+                            </div>
+                            <div class="project-name">
+                                <p>EXCLUIR ADM</p>
+                            </div>
+                        </div>
+
+        </div>
+
+        <div class="containercard mt-2 mb-3">
+            <div class="items zoom" data-toggle="modal" data-target="#myModalmod">
+                        <div class="icon-wrapper">
+                             <i class="fas fa-user-check"></i>
+                        </div>
+                        <div class="project-name">
+                            <p>CADASTRAR MOD</p>
+                        </div>
+                    </div>
+
+                    <a href="listamod"><div class="items zoom">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                            <div class="project-name">
+                                <p>GERENCIAR MODs</p>
+                            </div>
+                        </div></a>
+
+        </div>
+
+        <div class="containercard mt-2 mb-3">
+            <a href="/close"><div class="items zoom">
+                <div class="icon-wrapper">
+                        <i class="fas fa-sign-out-alt fa-2x"></i>
+                </div>
+                <div class="project-name">
+                    <p>ENCERRAR SESSÃO</p>
+                </div>
+            </div></a>
+        </div>
+    </div>
+    
+
+<!-- modal cadastrar-->
+<div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Cadastro(ADM)</h4>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="/cadastraradm" method="post">
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" class="form-control" name="nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha:</label>
+                            <input type="password" class="form-control" name="senha">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Cadastar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- modal cadastrar-->
+
+
+<!-- modal cadastrar MOD-->
+<div class="modal fade" id="myModalmod">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Cadastro(MOD)</h4>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="modal-body">
+                <form action="/casmod" method="post">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" name="nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha:</label>
+                        <input type="password" class="form-control" name="senha">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Cadastar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal cadastrar MOD-->
+
+
+<!-- modal excluir -->
+<div class="modal fade" id="myModal2">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h4 class="modal-title">EXCLUIR</h4>
+                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div class="modal-body">
+                <form action="/exadm" method="post">
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" class="form-control" name="nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha:</label>
+                        <input type="password" class="form-control" name="senha">
+                    </div>
+                    <button type="submit" class="btn btn-danger btn-block">Excluir</button>
+                    <% if (typeof na == 'undefined'){ }else if(na == 1){ %>
+                    <div class="text-center bg-danger mt-2 rounded text-white ffr">
+                            <script>
+                                    $('#myModal2').modal('show');
+    
+                                </script>
+                                <p>Não é possivel apagar esse ADM</p>
+                    <% }else{} %>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal excluir -->
+</body>
+
+</html>

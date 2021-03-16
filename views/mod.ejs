@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="public/font_awesome/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="/public/css/estilo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="public/js/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:600&display=swap" rel="stylesheet">
+</head>
+
+<body class="grad">
+    <%if(typeof adm == 'undefined'){%>
+    <div class="container mb-2 mx-auto  ffr">
+        <a href="/"><img src="/public/img/loho.png" class="mx-auto d-block"></a>
+        <div class="container shadow-lg bg-white rounded p-5">
+            <p class="text-center text-m">MODERADOR</p>
+            <form action="/modpage" method="POST">
+                <div class="form-group">
+                    <label>Nome</label>
+                    <input type="text" class="form-control" placeholder="Nome" name="nome">
+                </div>
+                <div class="form-group">
+                    <label>Senha</label>
+                    <input type="password" class="form-control" placeholder="Senha" name="senha">
+                </div>
+                <button type="submit" class="btn btn-outline-primary mb-2">Enviar</button>
+                <% if (typeof log === 'undefined'){ } else{%>
+                    <div class=" bg-danger border rounded w-50 mx-auto rounded pt-2 text-white text-center">
+                        <% if(log==0){%>
+                        <p>Digite seu email e senha!</p>
+                        <% } else if(log==1){ %>
+                        <p>Usuário e senha incorretos ou não cadastrados</p>
+                        <% } else if(log==2){ %>
+                        <p>Erro no MySQL, contate o ADM</p>
+                        <% } %>
+                        <% } %>
+                    </div>
+                </div>
+            </form>
+       </div>
+       <%}else{%>
+        <div class="container shadow-lg bg-white rounded p-5 text-center">
+            <p class="ffr text-m">Já está logado como ADM</p>
+            <a button class="btn btn-primary" href="/close">SAIR?</a>
+        </div>
+        <%}%>
+</body>
+
+</html>

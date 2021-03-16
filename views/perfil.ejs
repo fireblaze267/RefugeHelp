@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="public/font_awesome/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="/public/css/estilo.css">
+    <link rel="stylesheet" href="/public/css/perfil.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="public/js/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top color" id="aa" style="margin:0px;">
+        <button class="navbar-toggler navbar-toggler-right btn-primary" style="background:unset" type="button"
+            data-toggle="collapse" data-target="#navb" id="menucell">
+            <span><i class="fas fa-list-ul"></i></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse ffr" id="navb">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm " href="/"><i class="fas fa-home"></i>
+                        REFUGE HELP</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/noticias"> <i class="far fa-newspaper"></i>
+                        NOTÍCIAS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/refugiados"> <i class="fas fa-user-injured"></i>
+                        REFUGIADOS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/ongs"> <i class="fas fa-globe"></i>
+                        ONGS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/sobre"><i class="fas fa-info-circle"></i> SOBRE
+                        NÓS</a>
+                </li>
+            </ul>
+
+        </div>
+
+    </nav>
+    <div class="container emp-profile ffr">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="profile-img">
+                    <i class="far fa-user-circle fa-8x"></i>
+                    <div class="file btn btn-lg btn-primary">
+                        Mudar foto
+                        <input type="file" name="file" />
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="profile-head text-center">
+                    <h5>
+                        <p>Informações</p>
+                    </h5>
+                    <div class="tab-content profile-tab" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="text-center">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Email</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><%=info[0].email%></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>Nome</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><%=info[0].nome%></p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label>senha</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <p><%=info[0].senha%></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container mt-5 text-center">
+                <div class="row p-5">
+                    <div class="col-md-12 mt-1 mx-auto">
+                        <a href="/editarperfil"><input type="submit" class="profile-edit-btn" name="btnAddMore"
+                                value="Editar perfil"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>

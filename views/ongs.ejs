@@ -1,0 +1,262 @@
+<html style="scroll-behavior: smooth;">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="public/font_awesome/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="/public/css/estilo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="public/js/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/sc.css">
+</head>
+
+<body class="ongs">
+    <nav class="navbar navbar-expand-lg ongs " id="aa" style="z-index:100 ;margin:0px;">
+        <button class="navbar-toggler navbar-toggler-right btn-primary" style="background:unset" type="button"
+            data-toggle="collapse" data-target="#navb" id="menucell">
+            <span><i class="fas fa-list-ul"></i></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse ffr" id="navb">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/"><i class="fas fa-home"></i>
+                        REFUGE HELP</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/noticias"> <i class="far fa-newspaper"></i>
+                        NOTÍCIAS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/refugiados"> <i class="fas fa-user-injured"></i>
+                        REFUGIADOS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm border-bottom" style="border-bottom: solid 3px !important" href="/ongs">
+                        <i class="fas fa-globe"></i>
+                        ONGS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/sobre"><i class="fas fa-info-circle"></i> SOBRE
+                        NÓS</a>
+                </li>
+            </ul>
+            <%if(typeof sess === 'undefined'){ %>
+            <button class="btn btn-primary mr-3" style="color:text-primary;" type="button" data-toggle="modal"
+                data-target="#myModalLogin">Login</button>
+            <button class="btn btn-primary" style="color:text-primary" type="button" data-toggle="modal"
+                data-target="#myModal">Cadastro</button>
+            <%}else{%>
+
+            <i class="far fa-user-circle fa-2x tm" type="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"></i>
+            <div class=" dropdown-menu dropdown-menu-right">
+                <%if(sess.logado == 1){ %>
+                <a class="dropdown-item" href="/perfil">Perfil</a>
+                <a class="dropdown-item" href="/close">encerrar sessão</a>
+                <%}else{%>
+                <a class="dropdown-item" href="/adm">Perfil</a>
+                <a class="dropdown-item" href="/close">encerrar sessão</a>
+                <%}%>
+                    </div>
+                    <% }%>
+            </div>
+    </nav>
+
+    <div class="container-fluid text-center h-75 ongs">
+        <div class="ongtxt ffr">
+            <h1 style="font-size: 4rem !important;">ONG's <br>
+                <span class="txt-rotate" data-period="2000" data-rotate='[ "ajudam.", "acolhem.", "ensinam."]'></span>
+            </h1>
+        </div>
+    </div>
+    <div class="container-fluid per text-center ongs">
+        <center>
+            <a href="#ongs1">
+                <div class="p-2 text-center">
+                    <div class="chevron"></div>
+                    <div class="chevron"></div>
+                    <div class="chevron"></div>
+                </div>
+                <span class="text">sroll down</span>
+            </a>
+        </center>
+    </div>
+
+    <div class="container-fluid h-100 ongs-img1">
+        <div class="container p-5 per" id="ongs1">
+            <div class="row p-5">
+                <div class="col-sm-12 ffr2 text-center p-5 border mb-5 border-info rounded">
+                    <p>Fundado em 2010, o Instituto Adus de Reintegração do Refugiado é uma Organização da Sociedade
+                        Civil
+                        de Interesse Público (OSCIP) que atua junto aos refugiados e outros estrangeiros vítimas de
+                        migrações forçadas na cidade de São Paulo,
+                        a fim de reduzir os obstáculos que enfrentam para sua efetiva reintegração na sociedade.
+                        O Adus oferece para os refugiados aulas de português, inserção no mercado de trabalho e
+                        orientação jurídica. O Instituto também conta com uma escola de idiomas,
+                        o projeto Mente Aberta, na qual refugiados ministram aulas de inglês, francês e espanhol.</p>
+                    <p><a href="http://www.adus.org.br/">ADUS</a></p>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12-sm mx-auto mt-3">
+                    <a href="#ongs2"><i class="fas fa-arrow-circle-down fa-3x color-white"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid h-100 ongs-img2">
+        <div class="container p-5 per" id="ongs2">
+            <div class="row p-5">
+                <div class="col-sm-12 ffr2 text-center text-white p-5 mb-5 border teste border-info rounded">
+                    <p>A Missão Paz é uma instituição filantrópica de apoio e acolhimento a imigrantes e refugiados na
+                        cidade de São Paulo. Pertencente aos missionários Scalabrinianos,
+                        ela atua em favor do público migrante desde os anos trinta do século XX. Ao longo de sua
+                        história, ela recebeu italianos, vietnamitas, coreanos, chilenos, bolivianos,
+                        paraguaios, peruanos, congoleses, angolanos, nigerianos, colombianos, haitianos, venezuelanos,
+                        entre tantos outros povos do mundo. Atualmente, a instituição atende indívuos de mais de 70
+                        nacionalidades.
+                    </p>
+                    <a href="http://www.missaonspaz.org/home">
+                        <p>Missão Paz</p>
+                    </a>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12-sm mx-auto mt-3">
+                    <a href="#ongs3"><i class="fas fa-arrow-circle-down fa-3x color-white"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid h-100 ongs-img3">
+        <div class="container p-5 per" id="ongs3">
+            <div class="row p-5">
+                <div class="col-sm-12 ffr3 text-center text-white p-5 mb-5 border teste border-info rounded">
+                    <p>A Cáritas Brasileira, fundada em 12 de novembro de 1956, é uma das 164 organizações-membros da
+                        Rede Cáritas Internacional presentes no mundo.
+                        Nacionalmente, a Cáritas é um organismo da Conferência Nacional dos Bispos do Brasil (CNBB).
+                        Está organizada em uma rede com 183 entidades-membros, 12 regionais – Rio Grande do Sul, Santa
+                        Catarina, Paraná, São Paulo, Minas Gerais, Espírito Santo, Norte II (Amapá e Pará), Maranhão,
+                        Piauí, Ceará, Nordeste II (Alagoas, Paraíba, Pernambuco e Rio Grande do Norte) e Nordeste III
+                        (Bahia e Sergipe) – e uma sede nacional. Atua em 450 municípios, sendo presença solidária junto
+                        às pessoas mais empobrecidas.
+
+                    </p>
+                    <a href="http://caritas.org.br/">
+                        <p>Cáritas</p>
+                    </a>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12-sm mx-auto mt-3">
+                    <a href="/ongs"><i class="fas fa-redo-alt fa-3x color-white"></i></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE CADASTRO -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Cadastro</h4>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                            class="fas fa-times"></i></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="/cadastrar" method="post">
+                        <div class="form-group">
+                            <label for="nome">Nome de Usuario:</label>
+                            <input type="text" class="form-control" name="nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha:</label>
+                            <input type="password" class="form-control" name="senha">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Cadastar</button>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL DE CADASTRO -->
+
+
+    <!-- MODAL DE LOGIN -->
+    <div class="modal fade" id="myModalLogin">
+        <div class="modal-dialog-centered modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Logar</h4>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                            class="fas fa-times"></i></button>
+                </div>
+                <br>
+                <div class="modal-body">
+                    <form action="/logar" method="post">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha:</label>
+                            <input type="password" class="form-control" name="senha">
+                        </div>
+                        <p>Não tem conta?, Cadastre-se <a data-toggle="modal" href="#myModal"
+                                data-dismiss="modal">aqui!</a> </p>
+                        <button type="submit" class="btn btn-primary btn-block">Logar</button>
+
+                        <!--erro login-->
+
+                        <% if (typeof log === 'undefined'){ } else{%>
+                        <div class="text-center bg-danger mt-2 rounded text-white ffr">
+                            <% if(log==0){ %>
+                            <script>
+                                $('#myModalLogin').modal('show');
+                            </script>
+                            <p>Digite seu email e senha!</p>
+                            <% } else if(log==1){ %>
+                            <script>
+                                $('#myModalLogin').modal('show');
+                            </script>
+                            <p>Usuário e senha incorretos ou não cadastrados</p>
+                            <% } else if(log==2){ %>
+                            <script>
+                                $('#myModalLogin').modal('show');
+                            </script>
+                            <p>Erro no MySQL, contate o ADM</p>
+                            <% } %>
+                            <% } %>
+                        </div>
+
+                        <!--erro login-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL DE LOGIN -->
+</body>
+
+</html>

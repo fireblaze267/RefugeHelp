@@ -1,0 +1,240 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="public/font_awesome/fontawesome-free-5.9.0-web/css/all.css">
+    <link rel="stylesheet" href="/public/css/estilo.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="public/js/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top" id="aa" style="margin:0px;">
+        <button class="navbar-toggler navbar-toggler-right btn-primary" style="background:unset" type="button"
+            data-toggle="collapse" data-target="#navb" id="menucell">
+            <span><i class="fas fa-list-ul"></i></span>
+        </button>
+
+
+        <div class="collapse navbar-collapse ffr" id="navb">
+            <ul class="navbar-nav mr-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm " href="/"><i class="fas fa-home"></i>
+                        REFUGE HELP</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/noticias"> <i class="far fa-newspaper"></i>
+                        NOTÍCIAS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/refugiados"> <i class="fas fa-user-injured"></i>
+                        REFUGIADOS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm" href="/ongs"> <i class="fas fa-globe"></i>
+                        ONGS</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link ml-3 tm border-bottom" style="border-bottom: solid 3px !important"
+                        href="/sobre"><i class="fas fa-info-circle"></i> SOBRE
+                        NÓS</a>
+                </li>
+            </ul>
+            <%if(typeof sess === 'undefined'){ %>
+            <button class="btn btn-primary mr-3" style="color:text-primary;" type="button" data-toggle="modal"
+                data-target="#myModalLogin">Login</button>
+            <button class="btn btn-primary" style="color:text-primary" type="button" data-toggle="modal"
+                data-target="#myModal">Cadastro</button>
+            <%}else{%>
+
+            <i class="far fa-user-circle fa-2x tm" type="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false"></i>
+            <div class="dropdown-menu dropdown-menu-right">
+                <%if(sess.logado == 1){ %>
+                <a class="dropdown-item" href="/perfil">Perfil</a>
+                <a class="dropdown-item" href="/close">encerrar sessão</a>
+                <%}else{%>
+                <a class="dropdown-item" href="/adm">Perfil</a>
+                <a class="dropdown-item" href="/close">encerrar sessão</a>
+                <%}%>
+                    </div>
+                
+                    <% }%>
+
+            </div>
+
+    </nav>
+    <style>
+        .sobre {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .pd {
+            margin-bottom: 12%;
+        }
+    </style>
+
+    <div class="container-fluid sobre text-center bg-dark p-5">
+        <div class="row border border-dark grad p-5">
+            <h1 class="col-sm-12 display-3 mr-5 p-5"><img class="mr-5" src="/public/img/loho.png">Saiba sobre nós</h1>
+        </div>
+    </div>
+    <div class="row text-center bg-secondary shadow-lg p-5 m-0">
+        <div class="col-sm-12 sobre">
+            <h1 class="display-4">Desenvolvedores</h1>
+        </div>
+    </div>
+
+    <div class="container-fluid bg-dark p-5">
+        <div class="row">
+            <div class="col-sm-4 p-5 zoom">
+                <img src="/public/img/sobre1.png">
+            </div>
+            <div class="col-sm-4 p-5 zoom">
+                <img src="/public/img/sobre2.png">
+            </div>
+            <div class="col-sm-4 p-5 zoom">
+                <img src="/public/img/sobre3.png">
+            </div>
+        </div>
+
+        <div class="row text-center bg-primary shadow-lg">
+            <div class="col-sm-12 sobre">
+                <h1 class="display-4 p-5">Refugehelp?</h1>
+            </div>
+        </div>
+        <div class="row text-center p-5 mt-2 bg-secondary shadow-lg">
+            <div class="col-sm-12 p-5 sobre">
+                <p class="textsobre">Os confrontos armados e as crises econômicas ao redor do mundo fizerem por
+                    intensificar os processos imigratórios e de refúgio, e o Brasil tem sido umas das rotas de fuga para
+                    essas pessoas. Ao buscar informações a respeito disso eram encontradas muitas notícias desconexas e
+                    quase nenhum site focado no assunto, por isso foi criado o site Refuge Help.
+                    A plataforma web Refuge Help foi desenvolvida com o intuito de facilitar o acesso a informações a
+                    respeito dos refugiados, contendo notícias, informações e dados a respeito da entrada destes no
+                    país.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-dark p-5">
+        <div class="row text-center bg-primary shadow-lg">
+            <div class="col-sm-12 sobre">
+                <h1 class="display-4 p-5">Fale com a gente</h1>
+            </div>
+        </div>
+            <div class="row text-center p-5 mt-2 bg-secondary shadow-lg">
+                <div class="col-sm-6 textsobre p-5 sobre border-right">
+                    <p class="text-center">Achou algum erro ?<br> tem alguma duvida ?<br> Quer ser um Moderador e ajudar a gente contate-nos</p>
+                </div>
+                <div class="col-sm-6 textsobre p-5 sobre">
+                    <p>vinicius.gama25@hotmail.com</p>
+                    <p>nicolasbastos4@gmail.com</p>
+                    <p></p>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <!-- MODAL DE CADASTRO -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title">Cadastro</h4>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                            class="fas fa-times"></i></button>
+                </div>
+
+                <div class="modal-body">
+                    <form action="/cadastrar" method="post">
+                        <div class="form-group">
+                            <label for="nome">Nome de Usuario:</label>
+                            <input type="text" class="form-control" name="nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha:</label>
+                            <input type="password" class="form-control" name="senha">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Cadastar</button>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL DE CADASTRO -->
+
+
+    <!-- MODAL DE LOGIN -->
+    <div class="modal fade" id="myModalLogin">
+        <div class="modal-dialog-centered modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Logar</h4>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"><i
+                            class="fas fa-times"></i></button>
+                </div>
+                <br>
+                <div class="modal-body">
+                    <form action="/logar" method="post">
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha:</label>
+                            <input type="password" class="form-control" name="senha">
+                        </div>
+                        <p>Não tem conta?, Cadastre-se <a data-toggle="modal" href="#myModal"
+                                data-dismiss="modal">aqui!</a> </p>
+                        <button type="submit" class="btn btn-primary btn-block">Logar</button>
+
+                        <!--erro login-->
+
+                        <% if (typeof log === 'undefined'){ } else{%>
+                        <div class="text-center bg-danger mt-2 rounded text-white ffr">
+                            <% if(log==0){ %>
+                            <script>
+                                $('#myModalLogin').modal('show');
+                            </script>
+                            <p>Digite seu email e senha!</p>
+                            <% } else if(log==1){ %>
+                            <script>
+                                $('#myModalLogin').modal('show');
+                            </script>
+                            <p>Usuário e senha incorretos ou não cadastrados</p>
+                            <% } else if(log==2){ %>
+                            <script>
+                                $('#myModalLogin').modal('show');
+                            </script>
+                            <p>Erro no MySQL, contate o ADM</p>
+                            <% } %>
+                            <% } %>
+                        </div>
+
+                        <!--erro login-->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MODAL DE LOGIN -->
+</body>
+
+</html>
